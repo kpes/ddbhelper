@@ -63,14 +63,26 @@ func main() {
 		panic(err)
 	}
 
-	td := ddbhelper.CreateTableDefinition(tableName,
-		ddbhelper.WithTableIndex(ddbhelper.CreateIndex(pk, sk)),
-		ddbhelper.WithSecondaryIndex(gsi1, ddbhelper.CreateIndex(gsi1pk, gsi1sk)),
-	)
+	td := ddbhelper.TableDefinition{
+		TableName: tableName,
+		TableIndex: ddbhelper.Index{
+			PartitionKeyAttribute: pk,
+			SortKeyAttribute:      sk,
+		},
+		SecondaryIndexes: map[string]ddbhelper.Index{
+			gsi1: {
+				PartitionKeyAttribute: gsi1pk,
+				SortKeyAttribute:      gsi1sk,
+			},
+		},
+	}
 
 	userId := uuid.NewString()
 
-	userHandler := ddbhelper.CreateEntityHandler[user](td, client)
+	userHandler := ddbhelper.EntityHandler[user]{
+		TableDef:  td,
+		DdbClient: client,
+	}
 	fmt.Println("Inserting user...")
 	if err := userHandler.Insert(context.TODO(), user{
 		Id:        userId,
