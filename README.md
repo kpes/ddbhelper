@@ -1,7 +1,7 @@
-# Project Name
+# ddbhelper
 
-A brief description of your project.
 [![Go Reference](https://pkg.go.dev/badge/github.com/kpes/ddbhelper.svg)](https://pkg.go.dev/github.com/kpes/ddbhelper)
+This project is a helper library for working with DynamoDB in Go. It is not a full-fledged ORM, but rather a set of utilities to make working with DynamoDB easier.
 
 ## Table of Contents
 
@@ -12,16 +12,18 @@ A brief description of your project.
 
 ## Installation
 
-Instructions on how to install and set up your project.
+```bash
+go get github.com/kpes/ddbhelper
+```
 
 ## Usage
 
-Instructions on how to use your project and any relevant examples.
+See [example/main.go](example/main.go) for a full example.
 
 ## Contributing
 
-Guidelines on how others can contribute to your project.
+TBD
 
 ## License
 
-Information about the license under which your project is distributed.
+[Apache License 2.0](LICENSE)
