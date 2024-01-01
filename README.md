@@ -1,6 +1,7 @@
 # ddbhelper
-
 [![Go Reference](https://pkg.go.dev/badge/github.com/kpes/ddbhelper.svg)](https://pkg.go.dev/github.com/kpes/ddbhelper)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
 This project is a helper library for working with DynamoDB in Go. It is not a full-fledged ORM, but rather a set of utilities to make working with DynamoDB easier. It is intended to be used in conjunction with the AWS SDK for Go v2.  
 
 ## Installation
